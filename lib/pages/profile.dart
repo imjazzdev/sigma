@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:sigma/components/input/text_field.dart';
-import 'package:sigma/components/scaffold_template.dart';
-import 'package:sigma/theme/app_colors.dart';
 
-class SignupPage extends StatelessWidget {
-  const SignupPage({super.key});
+import '../components/scaffold_template.dart';
+import '../theme/app_colors.dart';
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ScaffoldTemplate(
+      appbar: AppBar(title: Text('Profile')),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 24),
         children: [
-          SizedBox(height: 16),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Sign Up',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-          ),
           SizedBox(height: 16),
           Container(
             padding: EdgeInsets.all(24),
@@ -97,7 +91,7 @@ class SignupPage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 16),
+          SizedBox(height: 70),
         ],
       ),
     );

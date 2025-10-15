@@ -43,12 +43,18 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Image.asset('assets/logo/splash.png'),
-          SizedBox(height: 20),
-          CircularProgressIndicator(),
-        ],
+      body: SizedBox(
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/logo/splash.png', height: 100),
+            SizedBox(height: 20),
+            CircularProgressIndicator(),
+          ],
+        ),
       ),
     );
   }
