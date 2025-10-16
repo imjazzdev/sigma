@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sigma/pages/monitoring_gizi.dart';
 import 'package:sigma/theme/app_colors.dart';
+
+import 'monitoring_pola_hidup.dart';
 
 class MonitoringPage extends StatelessWidget {
   const MonitoringPage({super.key});
@@ -17,14 +20,24 @@ class MonitoringPage extends StatelessWidget {
               pathImg: 'assets/icon/nutrition.png',
               title: 'Monitoring\nGizi',
               color: Colors.pink.shade100,
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => MonitoringGiziPage()),
+                );
+              },
             ),
             // SizedBox(height: 30),
             MenuItemMonitoring(
               pathImg: 'assets/icon/balance.png',
               title: 'Monitoring\nPola Hidup',
               color: Colors.amber.shade100,
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => MonitoringPolaHidupPage(),
+                  ),
+                );
+              },
             ),
           ],
         ),
@@ -55,16 +68,16 @@ class MenuItemMonitoring extends StatelessWidget {
       child: Container(
         height: 250,
         width: double.infinity,
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.all(8),
         margin: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         decoration: BoxDecoration(
           color: color,
           boxShadow: [
             BoxShadow(
               offset: Offset(4, 4),
-              blurRadius: 10,
-              spreadRadius: 10,
-              color: Colors.grey.withValues(alpha: 0.5),
+              blurRadius: 2,
+              spreadRadius: 2,
+              color: Colors.grey.withValues(alpha: 0.2),
             ),
           ],
           border: Border.all(color: AppColors.white, width: 15),
@@ -73,12 +86,13 @@ class MenuItemMonitoring extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(flex: 4, child: Image.asset(pathImg, height: 100)),
+            Expanded(flex: 2, child: Image.asset(pathImg, height: 100)),
             SizedBox(height: 4),
             Expanded(
               flex: 1,
               child: Text(
                 title,
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: fontSize,
                   fontWeight: FontWeight.bold,

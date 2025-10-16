@@ -20,8 +20,9 @@ class MyApp extends StatelessWidget {
       home: SplashPage(),
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-          color: AppColors.logoBlue,
+          // color: AppColors.logoBlue,
           titleTextStyle: TextStyle(color: AppColors.white, fontSize: 16),
+          backgroundColor: AppColors.logoBlue,
         ),
         textTheme: GoogleFonts.lexendDecaTextTheme(),
       ),

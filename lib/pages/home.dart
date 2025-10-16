@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sigma/pages/chatbot.dart';
+import 'package:sigma/pages/fun_fact.dart';
 import 'package:sigma/pages/monitoring.dart';
 import 'package:sigma/theme/app_colors.dart';
 
@@ -29,7 +31,11 @@ class HomePage extends StatelessWidget {
                 pathImg: 'assets/icon/storytelling.png',
                 title: 'Fun Fact',
                 color: Colors.blue.shade100,
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => FunFactListPage()),
+                  );
+                },
               ),
               SizedBox(width: 30),
               MenuItem(
@@ -60,7 +66,11 @@ class HomePage extends StatelessWidget {
                 pathImg: 'assets/icon/chatbot.png',
                 title: 'Chatbot',
                 color: Colors.blue.shade100,
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => ChatbotPage()),
+                  );
+                },
               ),
             ],
           ),
