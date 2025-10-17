@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sigma/components/input/text_field.dart';
-import 'package:sigma/components/scaffold_template.dart';
+import 'package:sigma/components/other/scaffold_template.dart';
 import 'package:sigma/theme/app_colors.dart';
 
 class SignupPage extends StatelessWidget {

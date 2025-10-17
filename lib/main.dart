@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sigma/components/watermark.dart';
-import 'package:sigma/pages/splash.dart';
+import 'package:sigma/components/other/watermark.dart';
+import 'package:sigma/pages/auth/splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sigma/theme/app_colors.dart';
 

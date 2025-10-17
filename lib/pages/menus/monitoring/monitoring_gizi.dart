@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sigma/pages/monitoring_gizi_detail.dart';
+import 'package:sigma/pages/menus/monitoring/monitoring_gizi_detail.dart';
 
-import '../theme/app_colors.dart';
+import '../../../theme/app_colors.dart';
 
 class MonitoringGiziPage extends StatelessWidget {
   const MonitoringGiziPage({super.key});

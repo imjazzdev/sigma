@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sigma/components/input/text_field.dart';
 import 'package:sigma/components/main_nav.dart';
-import 'package:sigma/components/scaffold_template.dart';
-import 'package:sigma/pages/signup.dart';
+import 'package:sigma/components/other/scaffold_template.dart';
+import 'package:sigma/pages/auth/signup.dart';
 
-import '../theme/app_colors.dart';
+import '../../theme/app_colors.dart';
 
 class SigninPage extends StatelessWidget {
   const SigninPage({super.key});

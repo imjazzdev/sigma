@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sigma/components/input/text_field.dart';
 
-import '../components/scaffold_template.dart';
+import '../components/other/scaffold_template.dart';
 import '../theme/app_colors.dart';
 
 class ProfilePage extends StatelessWidget {

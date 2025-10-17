@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../components/button/button_text.dart';
-import '../theme/app_colors.dart';
+import '../../../components/button/button_text.dart';
+import '../../../theme/app_colors.dart';
 
 class MonitoringPolaHidupPage extends StatelessWidget {
   const MonitoringPolaHidupPage({super.key});

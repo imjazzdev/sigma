@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sigma/pages/monitoring_gizi.dart';
+import 'package:sigma/pages/menus/monitoring/monitoring_gizi.dart';
 import 'package:sigma/theme/app_colors.dart';
 
 import 'monitoring_pola_hidup.dart';

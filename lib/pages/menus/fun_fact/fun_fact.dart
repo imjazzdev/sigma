@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sigma/pages/fun_fact_detail.dart';
+import 'package:sigma/pages/menus/fun_fact/fun_fact_detail.dart';
 
 class FunFactListPage extends StatelessWidget {
   final List<FunFact> funFacts = [

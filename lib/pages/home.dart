@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sigma/components/other/carousel.dart';
 import 'package:sigma/pages/chatbot.dart';
-import 'package:sigma/pages/fun_fact.dart';
-import 'package:sigma/pages/monitoring.dart';
+import 'package:sigma/pages/menus/fun_fact/fun_fact.dart';
+import 'package:sigma/pages/menus/monitoring/monitoring.dart';
+import 'package:sigma/pages/menus/resep/resep.dart';
 import 'package:sigma/theme/app_colors.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,7 +15,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: Text('Home')),
       body: Column(
         children: [
-          Container(height: 150, color: Colors.amber),
+          Container(height: 150, child: CarouselComponen()),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
@@ -82,7 +84,11 @@ class HomePage extends StatelessWidget {
                 pathImg: 'assets/icon/recipe-book.png',
                 title: 'Resep',
                 color: Colors.pink.shade100,
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(
+                    context,
+                  ).push(MaterialPageRoute(builder: (context) => ResepPage()));
+                },
               ),
             ],
           ),
