@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sigma/components/other/carousel.dart';
 import 'package:sigma/pages/chatbot.dart';
 import 'package:sigma/pages/menus/fun_fact/fun_fact.dart';
+import 'package:sigma/pages/menus/kalkulator/kalkulator_gizi.dart';
 import 'package:sigma/pages/menus/monitoring/monitoring.dart';
 import 'package:sigma/pages/menus/resep/resep.dart';
 import 'package:sigma/theme/app_colors.dart';
@@ -61,7 +62,13 @@ class HomePage extends StatelessWidget {
                 title: 'Kalkulator Gizi',
                 color: Colors.amber.shade100,
                 fontSize: 10,
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => KalkulatorGiziPage(),
+                    ),
+                  );
+                },
               ),
               SizedBox(width: 30),
               MenuItem(
@@ -69,9 +76,12 @@ class HomePage extends StatelessWidget {
                 title: 'Chatbot',
                 color: Colors.blue.shade100,
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => ChatbotPage()),
-                  );
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text('Coming soon 🥰')));
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(builder: (context) => ChatbotPage()),
+                  // );
                 },
               ),
             ],
@@ -85,9 +95,12 @@ class HomePage extends StatelessWidget {
                 title: 'Resep',
                 color: Colors.pink.shade100,
                 onTap: () {
-                  Navigator.of(
+                  ScaffoldMessenger.of(
                     context,
-                  ).push(MaterialPageRoute(builder: (context) => ResepPage()));
+                  ).showSnackBar(SnackBar(content: Text('Coming soon 🥰')));
+                  // Navigator.of(
+                  //   context,
+                  // ).push(MaterialPageRoute(builder: (context) => ResepPage()));
                 },
               ),
             ],

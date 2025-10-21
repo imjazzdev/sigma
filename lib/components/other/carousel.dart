@@ -28,21 +28,21 @@ class _CarouselComponenState extends State<CarouselComponen> {
             pathImg: 'assets/icon/hug.png',
             title: 'Konsultasi ke chatbot',
             subtitle:
-                'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+                'Dapatkan jawaban cepat seputar tumbuh kembang anak langsung dari chatbot pintar kami.',
           ),
           ItemsCarousel(
             color: Colors.pink.shade100,
             pathImg: 'assets/icon/body-fat.png',
-            title: 'Hitung gizi sikecil',
+            title: 'Hitung gizi si kecil',
             subtitle:
-                'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+                'Pantau kebutuhan gizi anak berdasarkan berat badan, tinggi badan, dan usia secara akurat',
           ),
           ItemsCarousel(
             color: Colors.blue.shade100,
             pathImg: 'assets/icon/child.png',
             title: 'Monitoring pola hidup',
             subtitle:
-                'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+                'Lacak aktivitas, asupan makan, dan pola tidur anak untuk mendukung tumbuh kembang optimal',
           ),
         ],
       ),

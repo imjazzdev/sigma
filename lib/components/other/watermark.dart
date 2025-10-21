@@ -8,8 +8,8 @@ class WatermarkWrapper extends StatelessWidget {
   const WatermarkWrapper({
     super.key,
     required this.child,
-    this.logoSize = 200,
-    this.opacity = 0.1,
+    this.logoSize = 300,
+    this.opacity = 0.3,
   });
 
   @override
