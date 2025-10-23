@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../model/user_menu.dart';
+
 class DetailMakananPage extends StatelessWidget {
   final String waktu; // "Pagi", "Siang", "Malam"
   final String hari;
@@ -7,6 +9,7 @@ class DetailMakananPage extends StatelessWidget {
   final String iconPath;
   final String gambarMakananPath;
   final String namaMakanan;
+  final UserMenu menu;
 
   const DetailMakananPage({
     super.key,
@@ -16,6 +19,7 @@ class DetailMakananPage extends StatelessWidget {
     required this.iconPath,
     required this.gambarMakananPath,
     required this.namaMakanan,
+    required this.menu,
   });
 
   @override
@@ -64,7 +68,7 @@ class DetailMakananPage extends StatelessWidget {
             // Gambar makanan
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
+              child: Image.network(
                 gambarMakananPath,
                 width: double.infinity,
                 height: 180,
@@ -109,7 +113,7 @@ class DetailMakananPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  ..._buildNutrisiList(),
+                  _buildNutrisiInfo(menu),
                 ],
               ),
             ),
@@ -119,50 +123,42 @@ class DetailMakananPage extends StatelessWidget {
     );
   }
 
-  List<Widget> _buildNutrisiList() {
-    final List<String> nutrisi = [
-      "Karbohidrat",
-      "Gula",
-      "Lemak total",
-      "Protein",
-      "Serat pangan",
-    ];
+  Widget _buildNutrisiInfo(UserMenu menu) {
+    final gizi = {
+      "Karbohidrat": "${menu.karbohidrat ?? 0} g",
+      "Gula": "${menu.gula ?? 0} g",
+      "Lemak total": "${menu.lemakTotal ?? 0} g",
+      "Protein": "${menu.protein ?? 0} g",
+      "Serat pangan": "${menu.seratPangan ?? 0} g",
+    };
 
-    return nutrisi.map((label) {
-      return Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 2,
-              child: Text(label, style: const TextStyle(fontSize: 14)),
-            ),
-            const SizedBox(width: 8),
-            Expanded(
-              flex: 3,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                child: DropdownButtonFormField<String>(
-                  decoration: const InputDecoration(border: InputBorder.none),
-                  isExpanded: true,
-                  hint: const Text('0g'),
-                  items:
-                      ['0g', '5g', '10g', '15g']
-                          .map(
-                            (e) => DropdownMenuItem(value: e, child: Text(e)),
-                          )
-                          .toList(),
-                  onChanged: (val) {},
-                ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children:
+          gizi.entries.map((e) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 6),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "${e.key}",
+                    style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Text(
+                    "${e.value}",
+                    style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
-        ),
-      );
-    }).toList();
+            );
+          }).toList(),
+    );
   }
 }

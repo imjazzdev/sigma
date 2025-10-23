@@ -95,12 +95,12 @@ class HomePage extends StatelessWidget {
                 title: 'Resep',
                 color: Colors.pink.shade100,
                 onTap: () {
-                  ScaffoldMessenger.of(
-                    context,
-                  ).showSnackBar(SnackBar(content: Text('Coming soon 🥰')));
-                  // Navigator.of(
+                  // ScaffoldMessenger.of(
                   //   context,
-                  // ).push(MaterialPageRoute(builder: (context) => ResepPage()));
+                  // ).showSnackBar(SnackBar(content: Text('Coming soon 🥰')));
+                  Navigator.of(
+                    context,
+                  ).push(MaterialPageRoute(builder: (context) => ResepPage()));
                 },
               ),
             ],

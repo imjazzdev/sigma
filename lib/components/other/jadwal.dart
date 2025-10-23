@@ -5,6 +5,9 @@ class JadwalCard extends StatelessWidget {
   final VoidCallback onTapPagi;
   final VoidCallback onTapSiang;
   final VoidCallback onTapMalam;
+  final VoidCallback onLongPressPagi;
+  final VoidCallback onLongPressSiang;
+  final VoidCallback onLongPressMalam;
 
   const JadwalCard({
     super.key,
@@ -12,6 +15,9 @@ class JadwalCard extends StatelessWidget {
     required this.onTapPagi,
     required this.onTapSiang,
     required this.onTapMalam,
+    required this.onLongPressPagi,
+    required this.onLongPressSiang,
+    required this.onLongPressMalam,
   });
 
   @override
@@ -20,13 +26,12 @@ class JadwalCard extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       decoration: BoxDecoration(
-        color: const Color(0xFFFFF4C2), // warna kuning muda
+        color: const Color(0xFFFFF4C2),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
         children: [
-          // Icon kalender + hari
+          // Hari
           Column(
             children: [
               Stack(
@@ -58,8 +63,8 @@ class JadwalCard extends StatelessWidget {
             label: 'Pagi',
             iconPath: 'assets/icon/morning.png',
             onTap: onTapPagi,
+            onLongPress: onLongPressPagi,
           ),
-
           const SizedBox(width: 12),
 
           // Siang
@@ -67,8 +72,8 @@ class JadwalCard extends StatelessWidget {
             label: 'Siang',
             iconPath: 'assets/icon/day-mode.png',
             onTap: onTapSiang,
+            onLongPress: onLongPressSiang,
           ),
-
           const SizedBox(width: 12),
 
           // Malam
@@ -76,6 +81,7 @@ class JadwalCard extends StatelessWidget {
             label: 'Malam',
             iconPath: 'assets/icon/night.png',
             onTap: onTapMalam,
+            onLongPress: onLongPressMalam,
           ),
         ],
       ),
@@ -87,24 +93,29 @@ class _WaktuCard extends StatelessWidget {
   final String label;
   final String iconPath;
   final VoidCallback onTap;
+  final VoidCallback onLongPress;
 
   const _WaktuCard({
     required this.label,
     required this.iconPath,
     required this.onTap,
+    required this.onLongPress,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      onLongPress: onLongPress,
+      highlightColor: Colors.blue.shade400,
+      borderRadius: BorderRadius.circular(8),
       child: Container(
         height: 70,
         width: 70,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.black12,
               blurRadius: 4,
@@ -112,7 +123,6 @@ class _WaktuCard extends StatelessWidget {
             ),
           ],
         ),
-
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -120,9 +130,9 @@ class _WaktuCard extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 14,
-                color: Colors.grey[800],
+                color: Colors.black87,
                 fontWeight: FontWeight.w500,
               ),
             ),
